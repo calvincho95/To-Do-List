@@ -1,18 +1,18 @@
 import { Flex } from "@chakra-ui/react";
 import { FC, useState } from "react";
-import CreateTodo2 from "./components/CreateTodo2";
-import TodoList2 from "./components/TodoList2";
+import CreateTodo from "./components/CreateTodo";
+import TodoList from "./components/TodoList";
 
 const sampleData: ITodo[] = [
   {
     id: 1,
     content: "🏃‍♀️ 달리기",
-    isDone: false,
+    isDone: true,
   },
   {
     id: 2,
     content: "🎈 풍선구매",
-    isDone: false,
+    isDone: true,
   },
   {
     id: 3,
@@ -26,8 +26,8 @@ const App: FC = () => {
 
   return (
     <Flex flexDir="column" minH="100vh">
-      <CreateTodo2 todos={todos} setTodos={setTodos} />
-      <TodoList2 todos={todos} />
+      <CreateTodo todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </Flex>
   );
 };

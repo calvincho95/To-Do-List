@@ -6,7 +6,7 @@ interface CreateTodoProps {
   setTodos: Dispatch<SetStateAction<ITodo[]>>;
 }
 
-const CreateTodo2: FC<CreateTodoProps> = ({ todos, setTodos }) => {
+const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
   const [currentTodoId, setCurrentTodoId] = useState<number>(
     todos[todos.length - 1].id
   );
@@ -30,7 +30,11 @@ const CreateTodo2: FC<CreateTodoProps> = ({ todos, setTodos }) => {
       justifyContent="center"
       alignItems="center"
     >
-      <Input value={content} onChange={(e) => setContent(e.target.value)} />
+      <Input
+        maxW={250}
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+      />
       <Button ml={2} colorScheme="teal" onClick={onClickCreateTodo}>
         만들기
       </Button>
@@ -38,4 +42,4 @@ const CreateTodo2: FC<CreateTodoProps> = ({ todos, setTodos }) => {
   );
 };
 
-export default CreateTodo2;
+export default CreateTodo;
