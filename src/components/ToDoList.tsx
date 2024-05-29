@@ -17,7 +17,7 @@ const TodoList: FC<TodoList> = ({ todos }) => {
       gap={2}
     >
       {todos.map((v) => (
-        <TodoCard key={v.id} />
+        <TodoCard key={v.id} todo={v} />
       ))}
     </Flex>
   );
