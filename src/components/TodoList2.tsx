@@ -1,35 +1,27 @@
 import { Flex } from "@chakra-ui/react";
-import { FC, useState } from "react";
-import CreateTodo from "./components/CreateTodo";
-import TodoList from "./components/TodoList";
+import { Dispatch, FC, SetStateAction } from "react";
+import TodoCard from "./TodoCard";
 
-const sampleData: ITodo[] = [
-  {
-    id: 1,
-    content: "🏃‍♀️ 달리기",
-    isDone: true,
-  },
-  {
-    id: 2,
-    content: "🎈 풍선구매",
-    isDone: true,
-  },
-  {
-    id: 3,
-    content: "🧹 청소하기",
-    isDone: false,
-  },
-];
+interface TodoListProps {
+  todos: ITodo[];
+  setTodos: Dispatch<SetStateAction<ITodo[]>>;
+}
 
-const App: FC = () => {
-  const [todos, setTodos] = useState<ITodo[]>(sampleData);
-
+const TodoList: FC<TodoListProps> = ({ todos, setTodos }) => {
   return (
-    <Flex flexDir="column" minH="100vh">
-      <CreateTodo todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} setTodos={setTodos} />
+    <Flex
+      bgColor="gray.50"
+      flexGrow={1}
+      flexDir="column"
+      alignItems="center"
+      pt={8}
+      gap={2}
+    >
+      {todos.map((v) => (
+        <TodoCard key={v.id} todo={v} todos={todos} setTodos={setTodos} />
+      ))}
     </Flex>
   );
 };
 
-export default App;
+export default TodoList;
