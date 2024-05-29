@@ -6,7 +6,7 @@ interface CreateTodoProps {
   setTodos: Dispatch<SetStateAction<ITodo[]>>;
 }
 
-const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
+const CreateTodo2: FC<CreateTodoProps> = ({ todos, setTodos }) => {
   const [currentTodoId, setCurrentTodoId] = useState<number>(
     todos[todos.length - 1].id
   );
@@ -38,4 +38,4 @@ const CreateTodo: FC<CreateTodoProps> = ({ todos, setTodos }) => {
   );
 };
 
-export default CreateTodo;
+export default CreateTodo2;

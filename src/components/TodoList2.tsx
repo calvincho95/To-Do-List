@@ -6,7 +6,7 @@ interface TodoListProps {
   todos: ITodo[];
 }
 
-const TodoList: FC<TodoListProps> = ({ todos }) => {
+const TodoList2: FC<TodoListProps> = ({ todos }) => {
   return (
     <Flex
       bgColor="gray.50"
@@ -23,4 +23,4 @@ const TodoList: FC<TodoListProps> = ({ todos }) => {
   );
 };
 
-export default TodoList;
+export default TodoList2;

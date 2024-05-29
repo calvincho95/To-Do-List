@@ -1,7 +1,7 @@
 import { Flex } from "@chakra-ui/react";
 import { FC, useState } from "react";
-import CreateTodo from "./components/CreateTodo";
-import TodoList from "./components/TodoList";
+import CreateTodo2 from "./components/CreateTodo2";
+import TodoList2 from "./components/TodoList2";
 
 const sampleData: ITodo[] = [
   {
@@ -26,8 +26,8 @@ const App: FC = () => {
 
   return (
     <Flex flexDir="column" minH="100vh">
-      <CreateTodo todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <CreateTodo2 todos={todos} setTodos={setTodos} />
+      <TodoList2 todos={todos} />
     </Flex>
   );
 };
